@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/HomeFragment">
+
+    <fragment
+        android:id="@+id/HomeFragment"
+        android:name="com.aya.storeapp.ui.fragment.HomeFragment"
+        tools:layout="@layout/home_fragment"
+        android:label="@string/Home_fragment"
+        >
+        <action
+            android:id="@+id/action_HomeFragment_to_StoreDetailsFragment"
+            app:destination="@id/StoreDetailsFragment"
+            />
+    </fragment>
+
+    <fragment
+        android:id="@+id/StoreDetailsFragment"
+        android:name="com.aya.storeapp.ui.fragment.StoreDetailsFragment"
+        tools:layout="@layout/store_details_fragment"
+        android:label="@string/details_store_fragment"
+        >
+  <!--      <argument
+            android:name="store"
+            app:argType="com.aya.storeapp.domain.model.Store" />
+-->
+        <argument
+            android:name="id"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_StoreDetailsFragment_to_HomeFragment"
+            app:destination="@+id/HomeFragment"
+            />
+    </fragment>
+
+
+
+</navigation>
